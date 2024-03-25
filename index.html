@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DiffusionAct">
+    <meta property="og:title" content="DiffusionAct"/>
+    <meta property="og:description"
+          content="DiffusionAct:"/>
+    <meta property="og:url" content="URL OF THE WEBSITE"/>
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/video_t1.png"/>
+    <meta property="og:image:width" content="2412"/>
+    <meta property="og:image:height" content="1394"/>
+
+
+    
+    <title>DiffusionAct</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+        });
+      </script>
+      <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script>
+    
+      <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+<section class="hero" style="width: 80%; margin: 0 auto;">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DiffusionAct: Controllable Diffusion Autoencoder for One-shot Face Reenactment</h1>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                <a href="https://stelabou.github.io/">Stella Bounareli</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://chi0tzp.github.io/">Christos Tzelepis</a><sup>2</sup>,</span>
+                <span class="author-block">
+                <a href="https://www.kingston.ac.uk/staff/profile/professor-vasilis-argyriou-332/">Vasileios Argyriou</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                <a href="http://www.eecs.qmul.ac.uk/~ioannisp/">Ioannis Patras</a><sup>3</sup>,
+                </span>
+                <span class="author-block">
+                <a href="https://ytzimiro.github.io/">Georgios Tzimiropoulos</a><sup>3</sup>,
+                </span>
+            </div>
+    
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Kingston Univeristy, London, UK, </span><br>
+                <span class="author-block"><sup>2</sup>City University of London, UK</span><br>
+                <span class="author-block"><sup>3</sup>Queen Mary Universtity of London, UK</span><br>
+            </div>
+            
+            </br>
+            <!-- <div class="is-size-5 publication-venue">
+            </div> -->
+    
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                    <a href=""
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                    </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                    <a href=""
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                </div>
+    
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- teaser -->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/teaser.png" class="center">
+        <h2 class="subtitle has-text-centered" style="font-family: Arial, sans-serif; font-size: 18px;">
+          DiffusionAct is a diffusion-based method, that performs one-shot self and cross-subject neural face reenactment without any subject-specific fine-tuning. We demonstrate that, compared to current state-of-the-art methods, 
+          our approach produces realistic, artifact-free images, accurately transfers the target head pose and expression, and faithfully reconstructs the source identity and appearance across challenging conditions, e.g., large head pose movements.
+        </h2>
+      </div>
+    </div>
+</section>
+  
+  
+
+<!-- Abstract -->
+<section class="section hero is-light" >
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified" style="font-family: Arial, sans-serif; font-size: 18px;">
+            <p>
+              Video-driven neural face reenactment aims to synthesize realistic facial images that successfully preserve the identity and appearance of a source face, while transferring the target head pose and facial expressions. 
+              Existing GAN-based methods suffer from either distortions and visual artifacts or poor reconstruction quality, i.e., the background and several important appearance details, such as hair style/color, glasses and accessories, 
+              are not faithfully reconstructed. Recent advances in Diffusion Probabilistic Models (DPMs) enable the generation of high-quality realistic images. To this end, in this paper we present DiffusionAct, a novel method that leverages the photo-realistic 
+              image generation of diffusion models to perform neural face reenactment. Specifically, we propose to control the semantic space of a Diffusion Autoencoder (DiffAE), in order to edit the facial pose of the input images, defined as the head pose 
+              orientation and the facial expressions. Our method allows one-shot, self, and cross-subject reenactment, without requiring subject-specific fine-tuning. 
+              We compare against state-of-the-art GAN-, StyleGAN2-, and diffusion-based methods, showing better or on-par reenactment performance. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+  </section>
+
+<!-- Method -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <!-- <div class="columns is-centered has-text-centered"> -->
+        <div class="container has-text-centered">
+        <!-- <div class="column is-four-fifths"> -->
+          <h2 class="title is-3">Method</h2>
+          <div>
+            <img src="static/images/architecture.png" class="center" style="width: 70%">
+          </div>
+          <br>
+          <div class="content has-text-justified" style="font-family: Arial, sans-serif; font-size: 18px;">
+            <p>
+              We present a method for neural face reenactment based on a pre-trained Diffusion Probabilistic Model (DPM). Specifically, given a pair of a source ($\mathbf{x}_0^s$) and a target ($\mathbf{x}_0^t$) images,
+               we propose to condition the pre-trained semantic encoder of a Diffusion Autoencoder (DiffAE) model on the target facial landmarks $\mathbf{y}_t$. Our reenactment encoder $\mathcal{E}_r$ learns to
+              to predict the semantic code $\mathbf{z}_r$ that, when decoded by the pre-trained DDIM sampler, generates the reenacted image $\mathbf{x}_0^r$ that captures the source identity/appearance and 
+              the target head pose and facial expressions.
+            </p>
+          </div>  
+        <!-- </div> -->
+      </div>
+    </div>
+</section>
+
+<style>
+    .gifImage:hover {
+        opacity: 0.8;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+    }
+
+    .paused {
+        animation-play-state: paused;
+    }
+
+</style>
+
+
+<head>
+    <title>place gif</title>
+    <style>
+        .gif-container {
+            display: flex;
+        }
+
+        .gif {
+            width: 660px; /* 设置 GIF 的宽度 */
+            height: 400px; /* 设置 GIF 的高度 */
+        }
+    </style>
+</head>
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Generated Videos</h2>
+            <br></br>
+            
+
+            <style>
+                .video-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .video-item column {
+                    width: 48%; /* 各占一半，留下一些间隔 */
+                    object-fit: cover; /* 保持图片纵横比 */
+                    margin: 0 10px;
+                }
+
+
+                .item-gif-container {
+                    width: 48%; /* 占据父元素的80%宽度 */
+                    margin: auto; /* 水平方向上创建相同的空白 */
+                }
+            </style>
+
+            <style>
+                .video-container {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    /*margin: 0 10px;*/
+                    width: 100%;
+                }
+
+                .description {
+                    font-size: 1.2em;
+                    text-align: justify;
+                }
+
+                .content-description {
+                    margin-top: 10px; /* Add some space above the description */
+                }
+            </style>
+            <style>
+                .caption {
+                    margin-top: 8px; /* Space between the video and its caption */
+                }
+            </style>
+
+
+            <div class="video-item">
+
+                <div class="column">
+                    <video class="video-player" poster="" id="tree2" controls>
+                        <source src="./static/videos/id10293_audio.mp4" type="video/mp4">
+                    </video>
+                </div>
+    
+                <div class="column">
+                  <video class="video-player" poster="" id="tree2" controls>
+                      <source src="./static/videos/id10286_audio.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+            </div>
+            
+
+            <div class="video-item">
+
+                <div class="column">
+                    <video class="video-player" poster="" id="tree2" controls>
+                        <source src="./static/videos/id10287_audio.mp4" type="video/mp4">
+                    </video>
+                </div>
+    
+                <div class="column">
+                  <video class="video-player" poster="" id="tree2" controls>
+                      <source src="./static/videos/id10283_audio.mp4" type="video/mp4">
+                  </video>
+                </div>
+            </div>
+
+            <div class="video-item">
+
+                <div class="column">
+                    <video class="video-player" poster="" id="tree2" controls>
+                        <source src="./static/videos/id10282_video_id10286_audio.mp4" type="video/mp4">
+                    </video>
+                </div>
+    
+                <div class="column">
+                  <video class="video-player" poster="" id="tree2" controls>
+                      <source src="./static/videos/id10289_video_id10307_audio.mp4" type="video/mp4">
+                  </video>
+                </div>
+            </div>
+
+            <div class="video-item">
+
+                <div class="column">
+                    <video class="video-player" poster="" id="tree2" controls>
+                        <source src="./static/videos/id10288_video_id10280_audio.mp4" type="video/mp4">
+                    </video>
+                </div>
+    
+                <div class="column">
+                  <video class="video-player" poster="" id="tree2" controls>
+                      <source src="./static/videos/id10296_video_id10287_audio.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+              </div>
+
+        </div>
+        <br></br>
+    </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="hero is-small ">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Comparisons with face reenactment methods</h2>
+            <br></br>
+            
+            <div style="display: flex; justify-content: center;align-items: center; height: 80px;">
+                <h3 class="title is-4"> Self Reenactment</h3>
+            </div>
+
+            <style>
+                .video-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .video-item column {
+                    width: 48%; /* 各占一半，留下一些间隔 */
+                    object-fit: cover; /* 保持图片纵横比 */
+                    margin: 0 10px;
+                }
+
+
+                .item-gif-container {
+                    width: 48%; /* 占据父元素的80%宽度 */
+                    margin: auto; /* 水平方向上创建相同的空白 */
+                }
+            </style>
+
+            <style>
+                .video-container {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    /*margin: 0 10px;*/
+                    width: 100%;
+                }
+
+                .description {
+                    font-size: 1.2em;
+                    text-align: justify;
+                }
+
+                .content-description {
+                    margin-top: 10px; /* Add some space above the description */
+                }
+            </style>
+            <style>
+                .caption {
+                    margin-top: 8px; /* Space between the video and its caption */
+                }
+            </style>
+   
+            <div class="video-item">
+
+                <div class="column">
+                    <video class="video-player" poster="" id="tree2" controls>
+                        <source src="./static/videos/video_supp_self.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+            
+            <div style="display: flex; justify-content: center;align-items: center; height: 80px;">
+                <h3 class="title is-4"> Cross-subject Reenactment</h3>
+            </div>
+
+            <div class="video-item">
+
+                <div class="column">
+                    <video class="video-player" poster="" id="tree2" controls>
+                        <source src="./static/videos/video_supp_cross.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code> @InProceedings{bounareli2024diffusionact,
+        author    = {Bounareli, Stella and Tzelepis, Christos and Argyriou, Vasileios and Patras, Ioannis and Tzimiropoulos, Georgios},
+        title     = {DiffusionAct: Controllable Diffusion Autoencoder for One-shot Face Reenactment},
+        journal   = {arXiv},
+        year      = {2024},
+    }</code></pre>
+    </div>
+  </section>
+
+<footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The website code is borrowed from the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of Nerfies. We thank the authors for sharing the templates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="static/js/script.js"></script>
+<script>
+    // 获取所有视频元素
+    var videos = document.querySelectorAll('video');
+
+    // 为每个视频添加播放事件监听器
+    videos.forEach(function(video) {
+        video.addEventListener('play', function() {
+            // 当任何一个视频开始播放时，暂停其他所有视频
+            videos.forEach(function(otherVideo) {
+                if (otherVideo !== video) {
+                    otherVideo.pause();
+                }
+            });
+        }, false);
+    });
+</script>
+
+<script>
+    new BeforeAfter({
+        id: '#example1'
+    });
+    new BeforeAfter({
+        id: '#example2'
+    });
+    new BeforeAfter({
+        id: '#example3'
+    });
+    new BeforeAfter({
+        id: '#example4'
+    });
+    new BeforeAfter({
+        id: '#example6'
+    });
+    new BeforeAfter({
+        id: '#example7'
+    });
+
+</script>
+
+<script>
+    var gifImage = document.getElementById('gifImage');
+    var isPaused = false;
+
+    gifImage.addEventListener('mouseenter', function () {
+        gifImage.src = gifImage.src;
+        isPaused = true;
+    });
+
+    gifImage.addEventListener('mouseleave', function () {
+        if (isPaused) {
+            gifImage.src = gifImage.src;
+            isPaused = false;
+        }
+    });
+</script>
+
+<script>
+    bulmaCarousel.attach('#results-carousel11', {
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        infinite: true,
+        autoplay: false,
+    });
+    bulmaCarousel.attach('#results-carousel22', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        infinite: true,
+        autoplay: false,
+    });
+    bulmaCarousel.attach('#results-carousel44', {
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        infinite: false,
+        autoplay: false,
+    });
+</script>
+
+<script>
+    document.getElementById('gifImage3').src = 'content/gifs/Item.gif';
+    document.getElementById('gifImage1').src = 'content/gifs/s1.gif';
+    document.getElementById('gifImage2').src = 'content/gifs/s2.gif';
+
+    // 图片资源路径
+    const images = [
+        'content/teaser/t3.gif',
+        'content/teaser/t4.gif',
+        'content/teaser/t1.gif',
+        'content/teaser/t2.gif'
+    ];
+
+    // 获取要插入图片的div
+    const group1 = document.getElementById('group1');
+    const group2 = document.getElementById('group2');
+
+    // 创建并插入前两张图片
+    for (let i = 0; i < 2; i++) {
+        const img = document.createElement('img');
+        img.src = images[i];
+        img.loading = 'lazy';
+        img.alt = '图片' + (i + 1);
+        group1.appendChild(img);
+    }
+
+    // 创建并插入后两张图片
+    for (let i = 2; i < images.length; i++) {
+        const img = document.createElement('img');
+        img.src = images[i];
+        img.loading = 'lazy';
+        img.alt = '图片' + (i + 1);
+        group2.appendChild(img);
+    }
+
+</script>
+
+</body>
+
+
+</html>
