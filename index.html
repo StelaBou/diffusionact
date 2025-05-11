@@ -84,8 +84,9 @@
             </div>
             
             </br>
-            <!-- <div class="is-size-5 publication-venue">
-            </div> -->
+            <div class="is-size-5 publication-venue">
+                Published in the 19th IEEE International Conference on Automatic Face and Gesture Recognition (FG), 2025
+            </div>
     
             <div class="column has-text-centered">
                 <div class="publication-links">
@@ -202,8 +203,8 @@
         }
 
         .gif {
-            width: 660px; /* 设置 GIF 的宽度 */
-            height: 400px; /* 设置 GIF 的高度 */
+            width: 660px; 
+            height: 400px; 
         }
     </style>
 </head>
@@ -224,15 +225,15 @@
                 }
 
                 .video-item column {
-                    width: 48%; /* 各占一半，留下一些间隔 */
-                    object-fit: cover; /* 保持图片纵横比 */
+                    width: 48%; 
+                    object-fit: cover; 
                     margin: 0 10px;
                 }
 
 
                 .item-gif-container {
-                    width: 48%; /* 占据父元素的80%宽度 */
-                    margin: auto; /* 水平方向上创建相同的空白 */
+                    width: 48%; 
+                    margin: auto; 
                 }
             </style>
 
@@ -349,15 +350,15 @@
                 }
 
                 .video-item column {
-                    width: 48%; /* 各占一半，留下一些间隔 */
-                    object-fit: cover; /* 保持图片纵横比 */
+                    width: 48%; 
+                    object-fit: cover;
                     margin: 0 10px;
                 }
 
 
                 .item-gif-container {
-                    width: 48%; /* 占据父元素的80%宽度 */
-                    margin: auto; /* 水平方向上创建相同的空白 */
+                    width: 48%; 
+                    margin: auto; 
                 }
             </style>
 
@@ -417,8 +418,8 @@
       <pre><code> @InProceedings{bounareli2024diffusionact,
         author    = {Bounareli, Stella and Tzelepis, Christos and Argyriou, Vasileios and Patras, Ioannis and Tzimiropoulos, Georgios},
         title     = {DiffusionAct: Controllable Diffusion Autoencoder for One-shot Face Reenactment},
-        journal   = {arXiv},
-        year      = {2024},
+        journal   = {IEEE Conference on Automatic Face and Gesture Recognition},
+        year      = {2025},
     }</code></pre>
     </div>
   </section>
@@ -440,13 +441,10 @@
 
 <script src="static/js/script.js"></script>
 <script>
-    // 获取所有视频元素
     var videos = document.querySelectorAll('video');
 
-    // 为每个视频添加播放事件监听器
     videos.forEach(function(video) {
         video.addEventListener('play', function() {
-            // 当任何一个视频开始播放时，暂停其他所有视频
             videos.forEach(function(otherVideo) {
                 if (otherVideo !== video) {
                     otherVideo.pause();
@@ -521,7 +519,6 @@
     document.getElementById('gifImage1').src = 'content/gifs/s1.gif';
     document.getElementById('gifImage2').src = 'content/gifs/s2.gif';
 
-    // 图片资源路径
     const images = [
         'content/teaser/t3.gif',
         'content/teaser/t4.gif',
@@ -529,11 +526,9 @@
         'content/teaser/t2.gif'
     ];
 
-    // 获取要插入图片的div
     const group1 = document.getElementById('group1');
     const group2 = document.getElementById('group2');
 
-    // 创建并插入前两张图片
     for (let i = 0; i < 2; i++) {
         const img = document.createElement('img');
         img.src = images[i];
@@ -542,7 +537,6 @@
         group1.appendChild(img);
     }
 
-    // 创建并插入后两张图片
     for (let i = 2; i < images.length; i++) {
         const img = document.createElement('img');
         img.src = images[i];
